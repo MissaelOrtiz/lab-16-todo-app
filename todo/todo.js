@@ -1,5 +1,7 @@
 //import functions from local storage utils (getCurrentUser, setUser)
+import { getCurrentUser, setUser } from '../common/local-storage-utils.js';
 //import findbyId from utils
+import { findById } from '../common/utils.js';
 
 //creates a todo list, adds to user object todo array, updates user object
 export function createTodo(todoTask) {
