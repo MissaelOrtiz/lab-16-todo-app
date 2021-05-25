@@ -1,5 +1,5 @@
 import { getCurrentUser } from '../common/local-storage-utils.js';
-import { toggleTodoCompleted } from './todos.js';
+import { toggleTodo } from './todos.js';
 
 const ul = document.querySelector('ul');
 
@@ -14,8 +14,7 @@ export function renderTodos(){
     user.todos.forEach((todo) => {
         //make li element with to-do text string
         const li = document.createElement('li');
-        //EDIT/CONFIRM TODO TEXT VARIABLE
-        li.textContent = todo.text;
+        li.textContent = todo.message;
 
         //style completed to-do
         if (todo.completed) {
@@ -23,8 +22,9 @@ export function renderTodos(){
         }
 
         li.addEventListener('click', () => {
-            //EDIT/CONFIRM FUNCTION NAME + ARGUMENT
-            toggleTodoCompleted(todo);
+            //change completed boolean
+            toggleTodo(todo.id);
+            //render new ul
             renderTodos();
         });
 
