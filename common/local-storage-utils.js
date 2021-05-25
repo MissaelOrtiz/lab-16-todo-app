@@ -35,3 +35,8 @@ export function loginUser(username, password) {
         alert('This user not not exist. Try again or create a new user.');
     }
 }
+
+export function logoutUser() {
+    localStorage.removeItem('CURRENT_USER');
+    window.location = '../';
+}
