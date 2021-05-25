@@ -40,3 +40,9 @@ export function logoutUser() {
     localStorage.removeItem('CURRENT_USER');
     window.location = '../';
 }
+
+export function getCurrentUser() {
+    const currentUsername = localStorage.getItem('CURRENT_USER');
+    const user = getUser(currentUsername);
+    return user;
+}
