@@ -10,7 +10,7 @@ export function setUser(user) {
 
 export function createUser(username, password) {
     if (localStorage.getItem(username)) {
-        alert('This username already exists. Please choose another username.');
+        alert('This username taken. Please choose another username.');
     } else {
         const newUser = {
             username: username,
@@ -18,6 +18,20 @@ export function createUser(username, password) {
             todos: []
         };
         setUser(newUser);
-        // ADD IN LOG IN FUNCTION WHEN WRITTEN HERE
+        loginUser(username, password);
+    }
+}
+
+export function loginUser(username, password) {
+    const user = getUser(username);
+    if (user) {
+        if (user.password === password) {
+            localStorage.setItem('CURRENT_USER', username);
+            window.location = './todo/';
+        } else {
+            alert('Incorrect username and/or password. Try again.');
+        }
+    } else {
+        alert('This user not not exist. Try again or create a new user.');
     }
 }
