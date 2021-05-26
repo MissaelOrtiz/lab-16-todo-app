@@ -1,5 +1,5 @@
 import { getCurrentUser } from '../common/local-storage-utils.js';
-import { toggleTodo } from './todo.js';
+import { toggleTodo, nukeTodo } from './todo.js';
 
 
 export function renderTodos(){
@@ -14,21 +14,32 @@ export function renderTodos(){
     //EDIT USER TODO OBJECT
     user.todos.forEach((todo) => {
         //make li element with to-do text string
+        const div = document.createElement('div');
         const li = document.createElement('li');
-        li.textContent = todo.message;
+        const button = document.createElement('button');
 
+        li.textContent = todo.message;
+        button.textContent = 'nuke it';
+        button.style.marginLeft = '10px';
+        button.classList = 'nuke-button hidden';
+        button.value = todo.id;
         //style completed to-do
         if (todo.completed) {
             li.style.textDecoration = 'line-through';
+            button.classList.toggle('hidden');
         }
 
         li.addEventListener('click', () => {
-            //change completed boolean
             toggleTodo(todo.id);
-            //render new ul
+            renderTodos();
+        });
+        
+        button.addEventListener('click', () => {
+            nukeTodo(todo.id);
             renderTodos();
         });
 
-        ul.append(li);
+        div.append(li, button);
+        ul.append(div);
     });
 }
