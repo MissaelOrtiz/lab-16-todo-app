@@ -45,3 +45,27 @@ export function toggleTodo(todoId) {
         alert('task does not exist');
     }
 }
+
+
+//toggles the completed boolean in todos array in user object
+export function nukeTodo(todoId) {
+
+    //gets current user state
+    const user = getCurrentUser();
+
+    //looks for existing todo in the todo array in the user object
+    const existingTodo = findById(user.todos, todoId);
+
+    //if todo exists, toggles completed boolean 
+    if (existingTodo) {
+        //NUKE IT
+        const index = user.todos.indexOf(existingTodo);
+        user.todos.splice(index, 1);
+        //updates user in local storage
+        setUser(user);
+
+        //if no match, alerts user that the todo does not exist
+    } else {
+        return null;
+    }
+}
