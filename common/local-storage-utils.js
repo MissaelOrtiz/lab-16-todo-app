@@ -27,7 +27,7 @@ export function loginUser(username, password) {
     if (user) {
         if (user.password === password) {
             localStorage.setItem('CURRENT_USER', username);
-            window.location = './todo/';
+            window.location = '../todo/';
         } else {
             alert('Incorrect username and/or password. Try again.');
         }
