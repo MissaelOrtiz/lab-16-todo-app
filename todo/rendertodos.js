@@ -1,5 +1,5 @@
 import { getCurrentUser } from '../common/local-storage-utils.js';
-import { toggleTodo } from './todos.js';
+import { toggleTodo } from './todo.js';
 
 
 export function renderTodos(){
