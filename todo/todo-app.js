@@ -1,11 +1,12 @@
 import { renderTodos } from '../todo/rendertodos.js';
-import { logoutUser, getCurrentUser, setUser } from '../common/local-storage-utils.js';
+import { logoutUser } from '../common/local-storage-utils.js';
 import { createTodo } from '../todo/todo.js';
 
 
 //grabs DOM elements for rendering Todos
 const form = document.querySelector('form');
 const logoutButton = document.querySelector('.logout-button');
+renderTodos();
 
 //renders todo Tasks into ul 
 form.addEventListener('submit', (event) => {
@@ -19,5 +20,9 @@ form.addEventListener('submit', (event) => {
 
 });
 
+logoutButton.addEventListener('click', () => {
+    logoutUser();
 
+
+});
 
