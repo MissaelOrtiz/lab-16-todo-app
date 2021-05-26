@@ -12,10 +12,8 @@
     <title>Document</title>
 </head>
 <body>
-    This is the To Do List page. <br>
-    <a href="../index.html">Go Back</a>
-
     <section>
+        
         <form>
             <label>
                 Todo Task:
@@ -23,13 +21,15 @@
             </label>
             <button>Add Task</button>
         </form>
+        <ul>
+            <!--to do list populates here-->
+        </ul>
     </section>
-    <ul>
-        <!--to do list populates here-->
-    </ul>
-
-    <button class= "logout-button">Logout</button>
-
+    
+    <section class="bottom-section">
+        <a class="link-button" href="../index.html"><button>Go Back</button></a>
+        <button class= "logout-button">Logout</button>
+    </section>
     <script type="module" src="./todo-app.js"></script>
 </body>
 </html>

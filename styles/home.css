@@ -1,4 +1,9 @@
 /* add home page styles here */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+body {
+    font-family: 'Amatic SC', cursive;
+}
 
 .main-title {
     margin: 15%;
@@ -33,6 +38,11 @@ button {
     justify-content: center;
     align-items: center;
     background-color: var(--color3);
+}
+
+button:hover {
+    background-color: salmon;
+    color: white;
 }
 
 form {
