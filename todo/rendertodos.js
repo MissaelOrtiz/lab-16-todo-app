@@ -1,9 +1,10 @@
 import { getCurrentUser } from '../common/local-storage-utils.js';
 import { toggleTodo } from './todos.js';
 
-const ul = document.querySelector('ul');
 
 export function renderTodos(){
+    //get ul DOM element
+    const ul = document.querySelector('ul');
     //get current user
     const user = getCurrentUser();
 
