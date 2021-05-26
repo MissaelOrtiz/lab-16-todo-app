@@ -29,6 +29,6 @@ export function renderTodos(){
             renderTodos();
         });
 
-        ul.appendChild('li');
+        ul.append(li);
     });
 }

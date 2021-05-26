@@ -14,7 +14,8 @@ form.addEventListener('submit', (event) => {
     const todoTask = new FormData(form);
 
     createTodo(todoTask.get('message'));
-
+    renderTodos();
+    form.reset();
 
 });
 
