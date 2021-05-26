@@ -1,1 +1,45 @@
 /* add home page styles here */
+
+.main-title {
+    margin: 15%;
+    font-size: 3rem;
+}
+
+a {
+    font-size: 2rem;
+}
+
+.main-section {
+    border-radius: 50%;
+}
+
+input {
+    border-radius: 25%;
+
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 2rem;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color3);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
